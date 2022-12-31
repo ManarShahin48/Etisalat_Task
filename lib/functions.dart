@@ -13,7 +13,7 @@ Future<List<List<dynamic>>> processCsv(BuildContext context) async {
     "assets/test_file.csv",
   );
   print(result);
-  return const CsvToListConverter().convert(result, eol: "\n");
+  return const CsvToListConverter().convert(result);
 }
 
 Future<List<List<dynamic>>> createFirstFile() async {

@@ -125,7 +125,6 @@ class _MainScreenState extends State<MainScreen> {
         child: const Icon(Icons.upload),
         onPressed: () async {
           csvData = await processCsv(context);
-          print(csvData);
           setState(() {});
         },
       ),
