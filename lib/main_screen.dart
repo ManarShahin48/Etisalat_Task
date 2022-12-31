@@ -124,7 +124,7 @@ class _MainScreenState extends State<MainScreen> {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.upload),
         onPressed: () async {
-          csvData = await processCsv(context);
+          csvData = await upLoadCSV(context);
           setState(() {});
         },
       ),
