@@ -1,4 +1,5 @@
 import 'package:etisalat_task/functions.dart';
+import 'package:etisalat_task/view/custom_btn.dart';
 import 'package:flutter/material.dart';
 
 class FilesView extends StatelessWidget {
@@ -65,26 +66,13 @@ class FilesView extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                    style: ButtonStyle(
-                      foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xFF9373B9)),
-                    ),
-                    onPressed: onPressedBtn1,
-                    child: const Text('Generate First File',
-                        style: TextStyle(fontSize: 14))),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color(0xFF9373B9)),
-                  ),
-                  onPressed: sharedBtn1,
-                  child: const Icon(Icons.share),
+                CustomBtn(
+                  onPressed: onPressedBtn1,
+                  isIcon: false,
+                  fontSize: 14,
+                  text: 'Generate First File',
                 ),
+                CustomBtn(onPressed: sharedBtn1, isIcon: true),
               ],
             ),
           ),
@@ -128,26 +116,13 @@ class FilesView extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                    style: ButtonStyle(
-                      foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(const Color(0xFF9373B9)),
-                    ),
-                    onPressed: onPressedBtn2,
-                    child: const Text('Generate Second File',
-                        style: TextStyle(fontSize: 14))),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    foregroundColor:
-                    MaterialStateProperty.all<Color>(Colors.white),
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color(0xFF9373B9)),
-                  ),
-                  onPressed: sharedBtn2,
-                  child: const Icon(Icons.share),
+                CustomBtn(
+                  onPressed: onPressedBtn2,
+                  isIcon: false,
+                  fontSize: 14,
+                  text: 'Generate Second File',
                 ),
+                CustomBtn(onPressed: sharedBtn2, isIcon: true),
               ],
             ),
           ),

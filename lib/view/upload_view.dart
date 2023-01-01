@@ -1,3 +1,4 @@
+import 'package:etisalat_task/view/custom_btn.dart';
 import 'package:flutter/material.dart';
 
 class UploadView extends StatelessWidget {
@@ -18,18 +19,14 @@ class UploadView extends StatelessWidget {
               fontSize: 25,
             ),
           ),
-          const SizedBox(height: 20,),
-          ElevatedButton(
-            style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-              backgroundColor:
-                  MaterialStateProperty.all<Color>(const Color(0xFF9373B9)),
-            ),
+          const SizedBox(
+            height: 20,
+          ),
+          CustomBtn(
             onPressed: onPressed,
-            child: const Text(
-              'Add File',
-              style: TextStyle(fontSize: 18),
-            ),
+            isIcon: false,
+            fontSize: 18,
+            text: 'Add File',
           ),
         ],
       ),
