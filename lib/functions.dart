@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:pick_or_save/pick_or_save.dart';
 
 List<List<dynamic>>? csvData;
 List<List<dynamic>>? firstFileData;
@@ -52,6 +53,17 @@ Future<List<List<dynamic>>> createFirstFile() async {
   print('The first file is: ');
   print(firstDataFile);
   await file.writeAsString(firstDataFile);
+  List<String>? result = await PickOrSave().fileSaver(
+      params: FileSaverParams(
+        saveFiles: [
+          SaveFileInfo(
+              filePath: '${dir.path}/firstDataFile.csv',
+              fileName: "First File.csv")
+        ],
+      )
+  );
+  String savedFilePath = result![0];
+  print(savedFilePath);
   return const CsvToListConverter().convert(firstDataFile, eol: "\n");
 }
 
@@ -115,6 +127,18 @@ Future<List<List<dynamic>>> createSecondFile() async {
   String secondDataFile = const ListToCsvConverter().convert(secondData);
   print('The second file is: ');
   print(secondDataFile);
+  print(file);
   await file.writeAsString(secondDataFile);
+  List<String>? result = await PickOrSave().fileSaver(
+      params: FileSaverParams(
+        saveFiles: [
+          SaveFileInfo(
+              filePath: '${dir.path}/secondDataFile.csv',
+              fileName: "Second File.csv")
+        ],
+      )
+  );
+  String savedFilePath = result![0];
+  print(savedFilePath);
   return const CsvToListConverter().convert(secondDataFile, eol: "\n");
 }

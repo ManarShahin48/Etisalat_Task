@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:etisalat_task/functions.dart';
 import 'package:etisalat_task/view/files_view.dart';
 import 'package:etisalat_task/view/upload_view.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -28,12 +32,22 @@ class _MainScreenState extends State<MainScreen> {
                 setState(() {});
               },
             )
-          : FilesView(onPressedBtn1: () async {
+          : FilesView(
+          onPressedBtn1: () async {
               firstFileData = await createFirstFile();
               setState(() {});
-            }, onPressedBtn2: () async {
+            },
+          onPressedBtn2: () async {
               secondFileData = await createSecondFile();
               setState(() {});
+            },
+          sharedBtn1: () async {
+              Directory dir = await getApplicationDocumentsDirectory();
+              Share.shareXFiles([XFile('${dir.path}/firstDataFile.csv')]);
+            },
+          sharedBtn2: () async {
+              Directory dir = await getApplicationDocumentsDirectory();
+              Share.shareXFiles([XFile('${dir.path}/secondDataFile.csv')]);
             }),
     );
   }

@@ -6,10 +6,14 @@ class FilesView extends StatelessWidget {
     Key? key,
     required this.onPressedBtn1,
     required this.onPressedBtn2,
+    required this.sharedBtn1,
+    required this.sharedBtn2,
   }) : super(key: key);
 
   void Function() onPressedBtn1;
   void Function() onPressedBtn2;
+  void Function() sharedBtn1;
+  void Function() sharedBtn2;
 
   @override
   Widget build(BuildContext context) {
@@ -56,15 +60,34 @@ class FilesView extends StatelessWidget {
             const SizedBox(
               height: 60,
             ),
-          ElevatedButton(
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(const Color(0xFF9373B9)),
-              ),
-              onPressed: onPressedBtn1,
-              child: const Text('Generate First File',
-                  style: TextStyle(fontSize: 14))),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          const Color(0xFF9373B9)),
+                    ),
+                    onPressed: onPressedBtn1,
+                    child: const Text('Generate First File',
+                        style: TextStyle(fontSize: 14))),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFF9373B9)),
+                  ),
+                  onPressed: sharedBtn1,
+                  child: const Icon(Icons.share),
+                ),
+              ],
+            ),
+          ),
           if (firstFileData != null)
             Column(
               children: [
@@ -100,15 +123,34 @@ class FilesView extends StatelessWidget {
                   ),
               ],
             ),
-          ElevatedButton(
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(const Color(0xFF9373B9)),
-              ),
-              onPressed: onPressedBtn2,
-              child: const Text('Generate Second File',
-                  style: TextStyle(fontSize: 14))),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(const Color(0xFF9373B9)),
+                    ),
+                    onPressed: onPressedBtn2,
+                    child: const Text('Generate Second File',
+                        style: TextStyle(fontSize: 14))),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    foregroundColor:
+                    MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFF9373B9)),
+                  ),
+                  onPressed: sharedBtn2,
+                  child: const Icon(Icons.share),
+                ),
+              ],
+            ),
+          ),
           if (secondFileData != null)
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
