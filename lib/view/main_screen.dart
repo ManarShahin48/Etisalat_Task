@@ -43,11 +43,11 @@ class _MainScreenState extends State<MainScreen> {
             },
           sharedBtn1: () async {
               Directory dir = await getApplicationDocumentsDirectory();
-              Share.shareXFiles([XFile('${dir.path}/firstDataFile.csv')]);
+              Share.shareXFiles([XFile('${dir.path}/firstDataFile.csv')], text: 'You can share this file');
             },
           sharedBtn2: () async {
               Directory dir = await getApplicationDocumentsDirectory();
-              Share.shareXFiles([XFile('${dir.path}/secondDataFile.csv')]);
+              Share.shareXFiles([XFile('${dir.path}/secondDataFile.csv')], text: 'You can share this file');
             }),
     );
   }

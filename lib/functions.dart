@@ -58,7 +58,7 @@ Future<List<List<dynamic>>> createFirstFile() async {
         saveFiles: [
           SaveFileInfo(
               filePath: '${dir.path}/firstDataFile.csv',
-              fileName: "First File.csv")
+              fileName: "firstDataFile.csv")
         ],
       )
   );
@@ -134,7 +134,7 @@ Future<List<List<dynamic>>> createSecondFile() async {
         saveFiles: [
           SaveFileInfo(
               filePath: '${dir.path}/secondDataFile.csv',
-              fileName: "Second File.csv")
+              fileName: "secondDataFile.csv")
         ],
       )
   );
