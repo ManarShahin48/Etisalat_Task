@@ -1,4 +1,4 @@
-import 'package:etisalat_task/view/custom_btn.dart';
+import 'package:etisalat_task/view/components/custom_btn.dart';
 import 'package:flutter/material.dart';
 
 class UploadView extends StatelessWidget {

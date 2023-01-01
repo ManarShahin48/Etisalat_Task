@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:etisalat_task/functions.dart';
-import 'package:etisalat_task/view/files_view.dart';
-import 'package:etisalat_task/view/upload_view.dart';
+import 'package:etisalat_task/view/components/files_view.dart';
+import 'package:etisalat_task/view/components/upload_view.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
